@@ -5,7 +5,7 @@ You can navigate between months and view days in a grid layout.
 In the future, I plan to rebuild this project using React.
 
 ## Demo
-👉 [Check it out here] (https://selty-tech.github.io/vanilla-js-calendar/)
+👉 [Check it out here](https://selty-tech.github.io/vanilla-js-calendar/)
 
 ## Features
 - Navigate months (previous / next buttons)
