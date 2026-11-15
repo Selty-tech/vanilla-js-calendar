@@ -1,45 +1,133 @@
-#weekdays {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: clamp(12px, 4vw, 32px);
+  color: #222;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.calendar-app {
+  width: min(100%, 680px);
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.nav-buttons button {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  padding: 0;
+  color: #222;
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  touch-action: manipulation;
+}
+
+.nav-buttons button:hover {
+  background: #e8e8e8;
+}
+
+.nav-buttons button:active {
+  background: #ddd;
+}
+
+.nav-buttons button:focus-visible {
+  outline: 3px solid #426bb3;
+  outline-offset: 2px;
+}
+
+#calendar {
+  min-width: 0;
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  line-height: 1.2;
+  text-align: right;
+}
+
+#weekdays,
+#days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   text-align: center;
-  font-weight: bold;
-  margin-top: 10px;
+}
+
+#weekdays {
+  margin-bottom: 8px;
+  font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+  font-weight: 700;
+}
+
+#weekdays div {
+  min-width: 0;
+  padding: 4px 1px;
 }
 
 #days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
   gap: 4px;
-  margin-top: 10px;
 }
 
 #days div {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(44px, 8vw, 64px);
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 7px 8px;
   border: 1px solid #ccc;
-  padding: 8px;
-  text-align: right;
   border-radius: 4px;
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  line-height: 1.25;
 }
-
-
 
 #days .other-month {
   color: #888;
   background: #f8f8f8;
 }
 
-.header {
-  display: flex;
-  align-items: center;   /* vertically center */
-  justify-content: space-between; /* space between buttons and title */
-  margin-bottom: 10px;
-}
+@media (max-width: 360px) {
+  .header {
+    gap: 8px;
+  }
 
-.nav-buttons {
-  display: flex;
-  gap: 8px; /* space between prev/next buttons */
-}
+  .nav-buttons {
+    gap: 6px;
+  }
 
-#calendar {
-  margin: 0;
-  font-size: 1.5rem;
+  .nav-buttons button {
+    width: 46px;
+    height: 46px;
+  }
+
+  #days {
+    gap: 3px;
+  }
+
+  #days div {
+    min-height: 44px;
+    padding: 6px 5px;
+  }
 }

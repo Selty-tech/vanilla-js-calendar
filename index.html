@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
   <title>Calendar</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="header">
-    <div class="nav-buttons">
-      <button id="prev">←</button>
-      <button id="next">→</button>
-    </div>
-    <h1 id="calendar"></h1>
-  </div>
-  
-  <div id="weekdays"></div>
-  <div id="days"></div>
+  <main class="calendar-app">
+    <header class="header">
+      <nav class="nav-buttons" aria-label="Calendar navigation">
+        <button id="prev" type="button" aria-label="Previous month">←</button>
+        <button id="next" type="button" aria-label="Next month">→</button>
+      </nav>
+      <h1 id="calendar" aria-live="polite"></h1>
+    </header>
 
-
-
+    <div id="weekdays" aria-hidden="true"></div>
+    <div id="days" aria-label="Calendar dates"></div>
+  </main>
   <script src="app.js"></script>
 </body>
-
 </html>
